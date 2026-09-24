@@ -23,3 +23,8 @@ obj=SelectionSort()
 # calling method using object refernce
 result=obj.sort(arr)
 print("Array after sorting: ",result)
+
+
+# Selection Sort finds the smallest element from the unsorted part and puts it at the correct position.
+# Time complexity : O(n2)
+# Space complexity: O(1)
