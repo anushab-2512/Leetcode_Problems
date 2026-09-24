@@ -1,33 +1,27 @@
-class LinearSearch:
-    def search(self,arr,key):
-        for i in range(len(arr)):
-            if arr[i]==key:
-                return i
-        return -1
-
-# Taking input from user
-n=int(input("enter array size:"))
-print("Enter array elements:")
-
-# list of elements e.g: [1,2,3,4,5]
+class BubbleSort:
+    def sort(self,arr):
+        n=len(arr)
+        for i in range(n-1):
+            for j in range(n-1-i):
+                if arr[j]>arr[j+1]:
+                    arr[j],arr[j+1]=arr[j+1],arr[j]
+        return arr
+        
+# Array length
+n=int(input("Enter an Array size: "))
+print("Enter an Array elements")
+# creating an array and taking array elements
 arr=list(map(int,input().split()))
-print("Array:",arr)
+print("Array before sorting",arr)
 
-# taking input from the user to search an particular element
-key=int(input("Enter an element to search:"))
+# object creation
+obj=BubbleSort()
+# calling method by using object reference 
+result=obj.sort(arr)
+print("Array after sorting",result)
 
-# Creating object
-obj=LinearSearch()
 
-res=obj.search(arr,key)
-if res != -1:
-    print("Element found at the index:",res)
-else:
-    print("Element not found")
 
-# Theory about LinearSearch
-# idea: Check each element one by one from left to right.
-# Time Complexity: O(n)
-# "The space complexity of linear search is O(1) because we only use a constant amount of extra space for variables like the index and key. 
-# The input array itself is not considered extra space."
-# Important: Linear search does not require a sorted array but works on both sorted and unsorted arrays.
+# Bubble Sort compares adjacent elements and swaps them if they are in the wrong order.
+# Time complexity : O(n²)
+# Space complexity: O(1)
